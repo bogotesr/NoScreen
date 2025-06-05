@@ -1,0 +1,5 @@
+.DS_Store
+NoScreen.xcodeproj/project.xcworkspace/xcuserdata/bogo.xcuserdatad/UserInterfaceState.xcuserstate
+
+*.xcuserstate
+*.xcuserdata/
