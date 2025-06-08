@@ -56,7 +56,7 @@ struct homeWidgetEntryView : View {
                     .padding(.vertical, 3.0)
                 }
             }
-            .padding(.bottom, 70)
+            .padding(.bottom, 100)
         }
     }
 }
