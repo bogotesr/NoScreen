@@ -12,6 +12,7 @@ import SwiftUI
 struct homeWidgetBundle: WidgetBundle {
     var body: some Widget {
         homeWidget()
+        homeWidgetp2()
         homeWidgetControl()
     }
 }

@@ -26,5 +26,19 @@
         "scheme": "googlegmail://",
         "enabled": false,
         "position": 4
+    },
+    {
+        "name": "Maps",
+        "id": 5,
+        "scheme": "maps://",
+        "enabled": true,
+        "position": 5
+    },
+    {
+        "name": "YouTube",
+        "id": 6,
+        "scheme": "youtube://",
+        "enabled": true,
+        "position": 6
     }
 ]

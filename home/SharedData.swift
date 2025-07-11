@@ -34,7 +34,7 @@ func sharedAppListURL() -> URL? {
         .appendingPathComponent("AppList.json")
 }
 
-func loadAppList() -> [AppList] {
+func loadAppList(_ widgetNum: Int) -> [AppList] {
     guard let url = sharedAppListURL() else {
         return []
     }
@@ -45,6 +45,8 @@ func loadAppList() -> [AppList] {
         let newList = fullList
             .filter { $0.enabled }
             .sorted { $0.position < $1.position }
+            .filter { $0.position >= 5*(widgetNum-1) }
+            .filter { $0.position <= 5*widgetNum }
         print(newList)
         return newList
     } catch {

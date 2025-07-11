@@ -14,7 +14,7 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let apps = loadAppList()
+        let apps = loadAppList(1)
         let entry = SimpleEntry(date: Date(), apps: apps)
         completion(entry)
     }
@@ -22,7 +22,7 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        let apps = loadAppList()
+        let apps = loadAppList(1)
         let entryDate = Date()
         let entry = SimpleEntry(date: entryDate, apps: apps)
         entries.append(entry)
@@ -76,7 +76,27 @@ struct homeWidget: Widget {
             }
         }
         .configurationDisplayName("Apps Page")
-        .description("This page has your main apps.")
+        .description("This page has your main apps 1-5.")
+        .supportedFamilies([.systemLarge])
+    }
+}
+
+struct homeWidgetp2: Widget {
+    let kind: String = "homeWidgetp2"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            if #available(iOS 17.0, *) {
+                homeWidgetEntryView(entry: entry)
+                    .containerBackground(Color("dockColor"), for: .widget)
+            } else {
+                homeWidgetEntryView(entry: entry)
+                    .padding()
+                    .background()
+            }
+        }
+        .configurationDisplayName("Apps Page")
+        .description("This page has your main apps 6-10.")
         .supportedFamilies([.systemLarge])
     }
 }
