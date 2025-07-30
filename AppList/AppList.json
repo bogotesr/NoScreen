@@ -1,44 +1,44 @@
 [
     {
         "name": "Discord",
-        "id": 1,
+        "id": 0,
         "scheme": "discord://",
         "enabled": false,
         "position": 1
     },
     {
         "name": "Messages",
-        "id": 2,
+        "id": 1,
         "scheme": "messages://",
         "enabled": false,
         "position": 3
     },
     {
         "name": "Phone",
-        "id": 3,
+        "id": 2,
         "scheme": "shortcuts://run-shortcut?name=phone",
         "enabled": false,
         "position": 2
     },
     {
         "name": "Gmail",
-        "id": 4,
+        "id": 3,
         "scheme": "googlegmail://",
         "enabled": false,
         "position": 4
     },
     {
         "name": "Maps",
-        "id": 5,
+        "id": 4,
         "scheme": "maps://",
-        "enabled": true,
+        "enabled": false,
         "position": 5
     },
     {
         "name": "YouTube",
-        "id": 6,
+        "id": 5,
         "scheme": "youtube://",
-        "enabled": true,
+        "enabled": false,
         "position": 6
     }
 ]

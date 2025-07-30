@@ -45,9 +45,9 @@ func loadAppList(_ widgetNum: Int) -> [AppList] {
         let newList = fullList
             .filter { $0.enabled }
             .sorted { $0.position < $1.position }
-            .filter { $0.position >= 5*(widgetNum-1) }
-            .filter { $0.position <= 5*widgetNum }
-        print(newList)
+//            .filter { $0.position >= 5*(widgetNum-1) }
+//            .filter { $0.position <= 5*widgetNum }
+//        print(newList)
         return newList
     } catch {
         print("Couldn't parse json \(error)")
@@ -100,4 +100,16 @@ func mergeAppLists() {
     } catch {
         print("couldn't merge JSONs \(error)")
     }
+}
+
+func nextPosition() -> Int {
+    let enabledApps = loadFullList()
+        .filter{ $0.enabled }
+    let usedPositions = Set(enabledApps.map{ $0.position })
+    var position = 0
+    while usedPositions.contains(position) {
+        position += 1
+    }
+    
+    return position
 }

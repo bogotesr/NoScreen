@@ -16,12 +16,14 @@ struct homeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .onOpenURL { url in
-                    print("received: \(url.absoluteString)")
-                    
-                    UIApplication.shared.open(url)
-                }
+            NavigationStack {
+                ContentView()
+                    .onOpenURL { url in
+                        print("received: \(url.absoluteString)")
+                        
+                        UIApplication.shared.open(url)
+                    }
+            }
         }
     }
 }

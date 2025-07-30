@@ -87,6 +87,8 @@
 		DFC772912DF1722600D688AF /* Exceptions for "home" folder in "NoScreenWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AddAppSheet.swift,
+				EditAppListView.swift,
 				EnableSwitch.swift,
 				SharedData.swift,
 			);
